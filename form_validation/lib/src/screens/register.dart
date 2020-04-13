@@ -74,13 +74,18 @@ class RegisterScreenState extends State<RegisterScreen> with Validation {
     return RaisedButton(
       color: Colors.blueAccent,
       onPressed: () {
+        // jika sudah di validasi
         if (formKey.currentState.validate()) {
+          formKey.currentState.save(); //fungsi svae dijalankan
+
+          // untuk print ke terminal
           print('Nama Lengkap: $name');
           print('Email: $email');
           print('Password: $password');
         }
       },
       child: Text('Daftar'),
+      textColor: Colors.white,
     );
   }
 }
